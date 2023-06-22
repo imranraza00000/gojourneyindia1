@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <%- include("./partials/link_file/csslink/allcss.ejs"); %>
+</head>
+
+<body>
+    <div class="header-color">
+        <%- include("./partials/layout/header/header.ejs"); %>
+    </div>
+    
+    <section id="hero1">
+        <div class="opacity-mask" >
+    		<div class="intro_title ">
+    			<h1 class="animated fadeInDown color-dark-blue">Thank you for verified your Email</h1>
+    			<!-- <p class="animated fadeInDown">Oops!! Page not found</p> -->
+    			<a href="/myprofile" class="animated fadeInUp btn bg-color-dark-red text-white">Back to Myprofile</a>
+    		</div>
+        </div>
+	</section>
+      <%- include("./partials/layout/footer/footer.ejs"); %>
+       <script src="js/jquery-3.6.0.min.js"></script>
+            <script src="js/common_scripts_min.js"></script>
+            <script src="js/functions.js"></script>
+</body>
+
+</html>

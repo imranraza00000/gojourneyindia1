@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <p>1 STAR &nbsp; <input type="number" name="one" id="one" value='81'></p>
+        <p>2 STARS <input type="number" name="two" id="two" value='87'></p>
+        <p>3 STARS <input type="number" name="three" id="three" value='43'></p>
+        <p>4 STARS <input type="number" name="four" id="four" value='55'></p>
+        <p>5 STARS <input type="number" name="five" id="five" value='34'></p>
+        <button onclick="Calculate()">Calculate average</button>
+        <button onclick="Clear()">Reset</button>
+        <h2 id="resultTitle" style="display:none">Average Stars: <span id="avg" style="font-weight:normal"></span></h2>
+        <p id="roundp" style="display:none">Rounded Average = <span id="round" style="color:goldenrod;"></span></p>
+      </body>
+    <script>
+        function Calculate(){
+
+var oneStar = +document.getElementById('one').value;
+var twoStar = +document.getElementById('two').value;
+var threeStar = +document.getElementById('three').value;
+var fourStar = +document.getElementById('four').value;
+var fiveStar = +document.getElementById('five').value;
+
+var oneTotal = oneStar * 1;
+var twoTotal = twoStar * 2;
+var threeTotal = threeStar *3
+var fourTotal = fourStar * 4;
+var fiveTotal = fiveStar * 5;
+
+// console.log(oneStar)
+var totalClicks = (oneStar + twoStar + threeStar + fourStar + fiveStar);
+var totalStars = (oneTotal + twoTotal + threeTotal + fourTotal + fiveTotal);
+var avgStars = (totalStars/totalClicks);
+console.log(totalClicks, totalStars)
+
+avgStars = avgStars.toPrecision(3);
+
+if(avgStars.toString().split(".")[1]==0)
+  avgStars = Number(avgStars).toPrecision(1);
+
+var stars = '&#9733;';
+document.getElementById('resultTitle').style.display = 'block';
+document.getElementById('roundp').style.display = 'block';
+document.getElementById('avg').innerHTML = avgStars;
+
+for(var i = 0 ;i<(Math.round(avgStars))-1;i++)
+{
+  stars=stars+' &#9733;';
+}
+document.getElementById('round').innerHTML = stars;
+}
+
+function Clear(){
+document.getElementById('one').value=81;
+document.getElementById('two').value=87;
+document.getElementById('three').value=43;
+document.getElementById('four').value=55;
+document.getElementById('five').value=34;
+document.getElementById('avg').innerHTML = "";
+document.getElementById('round').innerHTML = "";
+document.getElementById('resultTitle').style.display = 'none';
+document.getElementById('roundp').style.display = 'none';
+}
+    </script>
+</body>
+</html>

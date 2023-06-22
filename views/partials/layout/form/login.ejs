@@ -1,0 +1,108 @@
+<!-- Sign In Popup -->
+<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+    <div class="small-dialog-header">
+    </div>
+    <div id="sign_in">
+        <p class=" text-center">Sign In</p>
+        <form method="post" action="login">
+            <div class="sign-in-wrapper">
+                <div class="row">
+                    <div class="col-lg-6"><a href="#0" class="social_bt google">Login with Google</a></div>
+                    <div class="col-lg-6"> <a href="#0" class="social_bt facebook">Login with Facebook</a></div>
+                </div>
+                <div class="divider"><span>Or</span></div>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" id="email">
+                        <i class=""></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label>Password</label>
+                    <input type="text" class="form-control" name="password" id="password">
+                    <i class=""></i>
+                </div>
+            </div>
+            <div class="row px-3 mb-4">
+                <div class="custom-control custom-checkbox custom-control-inline">
+                    <input id="chk1" type="checkbox" name="chk" class="custom-control-input">
+                    <label for="chk1" class="custom-control-label text-sm">Remember me</label>
+                </div>
+                <a href="#" class="text-right mb-0 text-sm">Forgot Password?</a>
+            </div>
+            <div class="text-center w-50 text-center"><input type="submit" value="Login" class="btn_login"></div>
+            <div class="row mb-4 px-3">
+                <small class="font-weight-bold text-center">Don't have an account? <a href="javascript:void(0);"
+                        onclick="register()"> Register</a></small>
+            </div>
+        </form>
+    </div>
+    <!-- create an Account -->
+    <div id="create_account">
+        <form method="post" action="/submit">
+            <p class=" text-center">Sign Up</p>
+            <div class="sign-in-wrapper">
+                <% if(typeof err !='undefined' ){%>
+                    <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>Oh snap!</strong> <a href="#" class="alert-link">
+                            <%= err %>
+                        </a> and try submitting again.
+                    </div>
+                    <% } %>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>Full Name</label>
+                                <input type="name" class="form-control" name="name" id="name">
+                                <i class=""></i>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Mobile</label>
+                                <input type="number" class="form-control" name="mobile" id="mobile">
+                                <i class=""></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                                <i class=""></i>
+                            </div>
+                        </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                    <i class=""></i>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Re-enter Password</label>
+                    <input type="password" class="form-control" name="confirm_password" id="confirm_password">
+                    <i class=""></i>
+                </div>
+            </div>
+            <div class="text-center w-50 text-center"><input type="submit" value="Register" class="btn_login"></div>
+            <div class="text-center"> Login <a href="javascript:void(0);" onclick="login()">Sign in</a>
+            </div>
+        </form>
+        <!--form -->
+    </div>
+</div>
+<script>
+    document.getElementById('create_account').style.display = "none";
+    function register() {
+        document.getElementById('sign_in').style.display = "none";
+        document.getElementById('create_account').style.display = "block";
+
+    }
+
+    function login() {
+        document.getElementById('create_account').style.display = "none";
+        document.getElementById('sign_in').style.display = "block";
+    }
+</script>

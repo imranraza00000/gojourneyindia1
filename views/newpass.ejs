@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/link_file/csslink/allcss.ejs"); %>
+  </head>
+
+  <body>
+    <div class="layer"></div>
+    <div class="header-color">
+      <%- include("./partials/layout/header/header.ejs"); %>
+    </div>
+    <section class="margin-top-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-xs-12 offset-md-1 col-sm-10 offset-lg-2">
+            <div class="row">
+               <%- include("./socialmediaicon.ejs"); %>
+              <div class="col-md-7 p-4 border bg-white">
+                <div id="sign_in">
+                                            <% if(typeof pasValidate !='undefined' ){%>
+                                                <div class="alert alert-dismissible alert-danger">
+                                                    <button type="button" class="btn-close"
+                                                        data-bs-dismiss="alert"></button>
+                                                    <strong>
+                                                        <%= pasValidate %>
+                                                    </strong>
+                                                </div>
+                                                <% } %>
+                                                    <form method="post" action="">
+                                                        <div class="row">
+                                                            <h3 class="text-dark py-3">New Password</h3>
+                                                            <div class="form-group col-md-12">
+                                                                <label class="text-dark">New Password</label>
+                                                                <input type="text" class="form-control" name="password"
+                                                                    id="Password" placeholder="Enter New Password">
+                                                                <i class=""></i>
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label class="text-dark">Confirm Password</label>
+                                                                <input type="text" class="form-control"
+                                                                    name="confirm_password" id="confirm_password"
+                                                                    placeholder="Enter Confirm Password">
+                                                                <i class=""></i>
+                                                                <input type="hidden" name="userId" value="<%= userId%>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6"><button type="submit"
+                                                                    class="btn btn-primary">Submit</button></div>
+                                                            <div class="col-md-6"></div>
+                                                        </div>
+                                                    </form>
+                                        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include("./partials/layout/footer/footer.ejs"); %>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/common_scripts_min.js"></script>
+    <script src="js/functions.js"></script>
+  </body>
+</html>

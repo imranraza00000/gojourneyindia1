@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from www.ansonika.com/citytours/single_tour.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Jun 2022 05:31:09 GMT -->
+
+<head>
+	<%- include("./partials/link_file/csslink/allcss.ejs"); %>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="fonts/icomoon/style.css">
+		<link rel="stylesheet" href="css/classic.css">
+		<link rel="stylesheet" href="css/classic.date.css">
+		<link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body,
+			html {
+				height: 100%;
+			}
+
+			.md-mobile-picker-header {
+				font-size: 14px;
+			}
+
+			input.md-mobile-picker-input {
+				color: initial;
+				width: 100%;
+				padding: 10px;
+				margin: 6px 0 12px 0;
+				border: 1px solid #ccc;
+				border-radius: 0;
+				font-family: arial, verdana, sans-serif;
+				font-size: 14px;
+				box-sizing: border-box;
+				-webkit-appearance: none;
+			}
+
+			.md-mobile-picker-button.mbsc-button {
+				font-size: 13px;
+				padding: 0 15px;
+				line-height: 36px;
+				float: right;
+				margin: 6px 0;
+				width: 100%;
+			}
+
+			.mbsc-col-no-padding {
+				padding-left: 0;
+			}
+
+			.md-mobile-picker-box-label.mbsc-textfield-wrapper-box,
+			.md-mobile-picker-box-label .mbsc-textfield-wrapper-box,
+			.md-mobile-picker-inline {
+				margin: 6px 0 12px 0;
+			}
+
+			.form-popup {
+				display: none;
+				right: 15px;
+				border: 3px solid #f1f1f1;
+				z-index: 9;
+			}
+
+			/* Add styles to the form container */
+			.form-container {
+				padding: 10px;
+				background-color: white;
+			}
+
+			/* Full-width input fields */
+			.form-container input[type=text],
+			.form-container input[type=password] {
+				width: 100%;
+				padding: 15px;
+				margin: 5px 0 22px 0;
+				border: none;
+				background: #f1f1f1;
+			}
+
+			/* When the inputs get focus, do something */
+			.form-container input[type=text]:focus,
+			.form-container input[type=password]:focus {
+				background-color: #ddd;
+				outline: none;
+			}
+
+			/* Set a style for the submit/login button */
+			/* Add a red background color to the cancel button */
+			/* Add some hover effects to buttons */
+			.form-container .btn:hover,
+			.open-button:hover {
+				opacity: 1;
+			}
+
+			.counter {
+				width: 100px;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.counter input {
+				width: 50px;
+				border: 0;
+				line-height: 30px;
+				font-size: 20px;
+				text-align: center;
+				background: #0052cc;
+				color: #fff;
+				appearance: none;
+				outline: 0;
+			}
+
+			.counter span {
+				display: block;
+				font-size: 25px;
+				padding: 0 10px;
+				cursor: pointer;
+				color: #0052cc;
+				user-select: none;
+			}
+
+			.counterClass {
+				pointer-events: none;
+				opacity: 0.5;
+			}
+		</style>
+</head>
+
+<body class="datepicker_mobile_full">
+	<!-- Remove this class to disable datepicker full on mobile -->
+	<div id="preloader">
+		<div class="sk-spinner sk-spinner-wave">
+			<div class="sk-rect1"></div>
+			<div class="sk-rect2"></div>
+			<div class="sk-rect3"></div>
+			<div class="sk-rect4"></div>
+			<div class="sk-rect5"></div>
+		</div>
+	</div>
+	<!-- End Preload -->
+	<div class="layer"></div>
+	<!-- Mobile menu overlay mask -->
+	<!-- Header================================================== -->
+	<%- include("./partials/layout/header/header.ejs"); %>
+		<!-- End Header -->
+		<section class="parallax-window-tour" data-parallax="scroll" data-image-src="img/slide_hero.jpg"
+			data-natural-width="1400" data-natural-height="470">
+			<div class="parallax-content-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<h1>Manlai Tours</h1>
+							<span class="rating"><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+									class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+									class="icon-smile"></i><small>(75)</small></span>
+						</div>
+						<div class="col-md-4">
+							<div id="price_single_main">
+								<p>
+									<span><sup>Rs.</sup>9999/-</span> per person
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End section -->
+		<main>
+			<div id="position">
+				<div class="container">
+					<ul>
+						<li><a href="#">Home</a>
+						</li>
+						<li><a href="#">Category</a>
+						</li>
+						<li>Page active</li>
+					</ul>
+				</div>
+			</div>
+			<!-- End Position -->
+			<div class="collapse" id="collapseMap">
+				<div id="map" class="map"></div>
+			</div>
+			<!-- End Map -->
+			<div class="container margin_60">
+				<div class="row">
+					<div class="col-lg-7" id="single_tour_desc">
+						<!-- Map button for tablets/mobiles -->
+						<div class="row">
+							<div class="col-lg-12">
+								<h3 class="fw-bold">What's include & exclusive</h3>
+								<p> Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens
+									ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. </p>
+								<div class="row">
+									<div class="col-md-6">
+										<h4>include Services</h4>
+										<ul id="" class="list_ok">
+											<li>Lorem ipsum dolor sit amet</li>
+											<li>No scripta electram necessitatibus sit</li>
+											<li>Quidam percipitur instructior an eum</li>
+											<li>Ut est saepe munere ceteros</li>
+											<li>No scripta electram necessitatibus sit</li>
+											<li>Quidam percipitur instructior an eum</li>
+										</ul>
+									</div>
+									<div class="col-md-6">
+										<h4>exclusive Services</h4>
+										<div id="exclusiv_service"></div>
+									</div>
+								</div>
+								<!-- End row  -->
+							</div>
+						</div>
+						<hr>
+						<h3 colspan="4"> Add options / Services/ Activities </h3>
+						<table class="table table-striped options_cart">
+
+							<div class="itemForm">
+								<thead>
+									<th>Item Name</th>
+									<th>Qty.</th>
+									<th>Price</th>
+								</thead>
+								<% for (var i=0; i < data.length; i++) {%>
+
+									<tr class="item">
+
+										<td class=""><input type="checkbox" class="checkbox"
+												id="checkbox_<%= data[i]._id %>" name="exclusiveActivities"
+												value="<%= data[i].acitivitiesName %>">
+											<%= data[i].acitivitiesName %>
+												<input type="hidden" id="price_<%= data[i]._id %>"
+													value="<%= data[i].acitivitiesPrice %>">
+
+										</td>
+
+										<td>
+
+											<%if(data[i].typeNumber){%>
+												<div id="counter_<%= data[i]._id %>" class="counter counterClass">
+													<span class="down"
+														onClick='decreaseCount("<%= data[i]._id %>", this)'>-</span>
+													<input id="countId" type="text" value="1 ">
+													<span class="up"
+														onClick='increaseCount("<%= data[i]._id %>",  this)'>+</span>
+												</div>
+												<%}%>
+										</td>
+
+
+										<td>
+											Rs. <%= data[i].acitivitiesPrice %>
+										</td>
+
+
+									</tr>
+									<%}%>
+							</div>
+
+						</table>
+						<div class="add_bottom_15"><small>* Prices for person.</small>
+						</div>
+					</div>
+					<!--End  single_tour_desc-->
+					<aside class="col-lg-5">
+
+						<div class="box_style_1">
+							<h3 class="inner">- Tour Manali -</h3>
+							<table class="table table_summary">
+								<tbody>
+
+									<tr>
+										<td> Adults </td>
+										<td id="adult" class=""> 0 </td>
+										<td class="" id="total"> 0 </td>
+									</tr>
+									<tr>
+										<td> Children </td>
+										<td id="child" class=""> 0 </td>
+										<td class=""> 0 </td>
+									</tr>
+									<tr>
+										<td> Activities </td>
+										<td class=""> 5 </td>
+										<td class="" id="activitiesId"> 0 </td>
+									</tr>
+									<tr class="total">
+										<td colspan="2"> Total cost </td>
+										<td class="text-end"> 3000 </td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+
+
+						<div class="box_style_1 expose">
+							<h3 class="inner bg-color-dark-red">- Booking Tour -</h3>
+							<div class="row">
+								<div class="col-sm-12">
+
+									<div class="form-group">
+										<div class="form-group">
+											<div mbsc-page class="demo-mobile-desktop-usage">
+												<div class="h-100">
+													<div class="mbsc-grid">
+														<div class="mbsc-form-group">
+															<div class="mbsc-row">
+																<div class="mbsc-col-12">
+																	<form action="#" class="row">
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label for="input_from">From</label>
+																				<input type="text"
+																					name="booking_start_date"
+																					class="form-control" id="input_from"
+																					placeholder="Start Date">
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label for="input_to">To</label>
+																				<input type="text"
+																					name="booking_and_date"
+																					class="form-control" id="input_to"
+																					placeholder="End Date">
+																			</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<br>
+								<table class="table table_summary">
+									<tbody>
+										<tr>
+											<td colspan="5">
+												<div>
+													<p class="destination-type-btn relative">
+														<strong>Categories</strong>
+													</p>
+													<div class="col ">
+														<div class="radio-inline">
+															<input class="form-check-input" class="honeymoon"
+																type="radio" name="categoryType" id="honeymoon"
+																value="Honeymoon">
+															<label class="form-check-label" for="flexRadioDefault1">
+																Honeymoon </label>
+														</div>
+														<div class="radio-inline">
+															<input class="form-check-input for" class="friend"
+																type="radio" name="categoryType" id="friend"
+																value="Friend">
+															<label class="form-check-label" for="flexRadioDefault2">
+																Friend </label>
+														</div>
+														<div class="radio-inline">
+															<input class="form-check-input" class="family" type="radio"
+																name="categoryType" id="family" value="Family">
+															<label class="form-check-label" for="flexRadioDefault2">
+																Family </label>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<button type="btn" class="btn btn-danger" onclick="addAdult()">Add
+													Person</button>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5">
+												<!-- add Adults function -->
+												<div class="form-popup form-inline" id="myForm">
+													<form action="/submit" method="" id="form" class="form-container">
+														<div class="row "></div>
+														<div class="col ">
+															<div class="form-check">
+																<button type="button" class="btn btn-danger"
+																	onclick="closeForm()">Close</button>
+															</div>
+														</div>
+												</div>
+												</form>
+							</div>
+							</td>
+							</tr>
+							</table>
+							<table class="table table_summary" id="table">
+							</table>
+							<a class="btn_full" onclick="date()">Submit And Check</a>
+						</div>
+						<!--/box_style_1 -->
+						<div class="box_style_4 mt-4">
+							<i class="icon_set_1_icon-90"></i>
+							<h4><span>Book</span> by phone</h4>
+							<a href="tel://004542344599" class="phone">+91 9808858882</a>
+							<small>Monday to Saturday 9.00am - 7.30pm</small>
+						</div>
+					</aside>
+				</div>
+				<!--End row -->
+			</div>
+			<!--End container -->
+			<div id="overlay"></div>
+			<!-- Mask on input focus -->
+		</main>
+		<!-- End main -->
+		<%- include("./partials/layout/footer/footer.ejs"); %>
+			<!-- End footer -->
+			<div id="toTop"></div><!-- Back to top button -->
+			<!-- Search Menu -->
+			<div class="search-overlay-menu">
+				<span class="search-overlay-close"><i class="icon_set_1_icon-77"></i></span>
+				<form role="search" id="searchform" method="get">
+					<input value="" name="q" type="text" placeholder="Search..." />
+					<button type="submit"><i class="icon_set_1_icon-78"></i>
+					</button>
+				</form>
+			</div><!-- End Search Menu -->
+			<!-- Sign In Popup -->
+			<!--form -->
+			<%- include("./partials/layout/form/login.ejs"); %>
+				<!-- /Sign In Popup -->
+				<!-- Modal Review -->
+				<div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="myReviewLabel">Write your review</h4>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div id="message-review">
+								</div>
+								<form method="post" action="" name="review_tour" id="review_tour">
+									<input name="tour_name" id="tour_name" type="hidden"
+										value="Paris Arch de Triomphe Tour">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<input name="name_review" id="name_review" type="text"
+													placeholder="Your name" class="form-control">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<input name="lastname_review" id="lastname_review" type="text"
+													placeholder="Your last name" class="form-control">
+											</div>
+										</div>
+									</div>
+									<!-- End row -->
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<input name="email_review" id="email_review" type="email"
+													placeholder="Your email" class="form-control">
+											</div>
+										</div>
+									</div>
+									<!-- End row -->
+									<hr>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Position</label>
+												<select class="form-select" name="position_review" id="position_review">
+													<option value="">Please review</option>
+													<option value="Low">Low</option>
+													<option value="Sufficient">Sufficient</option>
+													<option value="Good">Good</option>
+													<option value="Excellent">Excellent</option>
+													<option value="Superb">Super</option>
+													<option value="Not rated">I don't know</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Tourist guide</label>
+												<select class="form-select" name="guide_review" id="guide_review">
+													<option value="">Please review</option>
+													<option value="Low">Low</option>
+													<option value="Sufficient">Sufficient</option>
+													<option value="Good">Good</option>
+													<option value="Excellent">Excellent</option>
+													<option value="Superb">Super</option>
+													<option value="Not rated">I don't know</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<!-- End row -->
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Price</label>
+												<select class="form-select" name="price_review" id="price_review">
+													<option value="">Please review</option>
+													<option value="Low">Low</option>
+													<option value="Sufficient">Sufficient</option>
+													<option value="Good">Good</option>
+													<option value="Excellent">Excellent</option>
+													<option value="Superb">Super</option>
+													<option value="Not rated">I don't know</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Quality</label>
+												<select class="form-select" name="quality_review" id="quality_review">
+													<option value="">Please review</option>
+													<option value="Low">Low</option>
+													<option value="Sufficient">Sufficient</option>
+													<option value="Good">Good</option>
+													<option value="Excellent">Excellent</option>
+													<option value="Superb">Super</option>
+													<option value="Not rated">I don't know</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<!-- End row -->
+									<div class="form-group">
+										<textarea name="review_text" id="review_text" class="form-control h-100"
+											 placeholder="Write your review"></textarea>
+									</div>
+									<div class="form-group">
+										<input type="text" id="verify_review" class=" form-control"
+											placeholder="Are you human? 3 + 1 =">
+									</div>
+									<input type="submit" value="Submit" class="btn_1" id="submit-review">
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- <%= test= 255445542%> -->
+				</div>
+				<!-- // popup add new member -->
+				<!-- End modal review -->
+				<!-- Common scripts -->
+
+				<script>
+					exclisiveActivities = [];
+					activitiesTotalPrice = [];
+					let Chooran = '<%-JSON.stringify(data)%>'
+					let maa = JSON.parse(Chooran);
+
+					function sendLocalStorage() {
+						localStorage.setItem("exclisiveActivities", JSON.stringify(exclisiveActivities));
+					}
+
+					function getDataAcitiviteis() {
+						let Data = localStorage.getItem("exclisiveActivities");
+						if (Data) {
+							exclisiveActivities = JSON.parse(Data);
+
+							var iterator = exclisiveActivities.values();
+							for (const value of iterator) {
+								for (let i = 0; i < maa.length; i++) {
+									let idgetdata = document.getElementById('checkbox_' + maa[i]['_id']);
+									const counter = document.getElementById('counter_' + maa[i]['_id']);
+									if (idgetdata.value === value) {
+										idgetdata.checked = true;
+										if (maa[i]['typeNumber']) {
+
+											counter.classList.remove('counterClass')
+										}
+
+									}
+
+
+								}
+							}
+						} else {
+							sendLocalStorage()
+						};
+					};
+
+					// Get activities name
+					let qtyValueStore = [];
+					let activitiesPrice = [];
+
+					function priceAdd() {
+						localStorage.setItem('activitiesPrice', JSON.stringify(activitiesPrice));
+					}
+					for (let i = 0; i < maa.length; i++) {
+						let idgetdata = document.getElementById('checkbox_' + maa[i]['_id']);
+						let counter = document.getElementById('counter_' + maa[i]['_id']);
+						let priceValue = document.getElementById('price_' + maa[i]['_id']);
+						idgetdata.addEventListener('click', function () {
+
+							if (this.checked == true) {
+								// price.push(price.value);
+								exclisiveActivities.push(this.value);
+								exclisiveActivities.join('/');
+								qtyValueStore['checkbox_' + maa[i]['_id']] = "1";
+								activitiesPrice['checkbox_' + maa[i]['_id']] = priceValue.value
+								activitiesPrice.join('/');
+								// console.log(activitiesPrice)
+								// console.log(qtyValueStore);
+
+							} else if (this.checked == false) {
+								exclisiveActivities = exclisiveActivities.filter(e => e !== this.value);
+								exclisiveActivities.join('/');
+								activitiesPrice = activitiesPrice.filter(e => e !== priceValue.value);
+								activitiesPrice.join('/');
+								delete (qtyValueStore['checkbox_' + maa[i]['_id']])
+								// console.log(qtyValueStore);
+
+								if (maa[i]['typeNumber']) {
+									counter.classList.add('counterClass') //add class qty
+								}
+							}
+
+							sendLocalStorage()
+
+							getDataAcitiviteis()
+							ul()
+							priceAdd()
+						})
+					}
+
+					function ul() {
+						let table = `<div class="list_ok">
+								<ul class="list_ok">`;
+						for (let i = 0; i < exclisiveActivities.length; i++) {
+							table = table + `<tr>
+						<li>${exclisiveActivities[i]}</li> `;
+						};
+						table = table + `</ul></div>`;
+						document.getElementById("exclusiv_service").innerHTML = table;
+					};
+
+					getDataAcitiviteis()
+					ul()
+
+					var qtyValue = 0;
+
+					function qtyValueGet(id) {
+						for (let i = 0; i < maa.length; i++) {
+							let idgetdata = document.getElementById('checkbox_' + maa[i]['_id']);
+							if ('checkbox_' + maa[i]['_id'] === 'checkbox_' + id) {
+
+								let x = !isNaN(qtyValueStore['checkbox_' + maa[i]['_id']]) ? parseInt(qtyValue) : 1;
+								qtyValueStore['checkbox_' + maa[i]['_id']] = x;
+								// console.log(qtyValueStore);
+
+							}
+						}
+
+
+					}
+
+					function increaseCount(a, b) {
+
+						var input = b.previousElementSibling;
+						var value = parseInt(input.value, 10);
+						value = isNaN(value) ? 0 : value;
+						value++;
+						qtyValue = input.value = value;
+						// console.log(qtyValueStore);
+						qtyValueGet(a);
+						activitiesQtyPrice(a);
+					}
+
+					function decreaseCount(a, b) {
+						var input = b.nextElementSibling;
+						var value = parseInt(input.value, 10);
+						if (value > 1) {
+							value = isNaN(value) ? 0 : value;
+							value--;
+							qtyValue = input.value = value;
+							qtyValueGet(a);
+
+						}
+					}
+
+					function sendactivitiesTotalPrice() {
+						// activitiesTotalPrice.shift();
+						for (var key in activitiesPrice) {
+							document.getElementById('activitiesId').innerHTML = activitiesTotalPrice[key];
+						}
+
+					}
+					function activitiesQtyPrice(id) {
+						for (var key in activitiesPrice) {
+							if ('checkbox_' + id === key) {
+
+								let qytPrice = (activitiesPrice[key] * qtyValueStore[key]);
+								activitiesTotalPrice[key] = qytPrice;
+								activitiesTotalPrice.shift();
+								console.log(activitiesTotalPrice[key]);
+
+							}
+						}
+						sendactivitiesTotalPrice();
+						// getactivitiesTotalPrice();
+					}
+
+
+
+				</script>
+				<script src="js/jquery-3.6.0.min.js"></script>
+				<script src="js/common_scripts_min.js"></script>
+				<script src="js/functions.js"></script>
+				<!-- Booking Script -->
+				<script src="js/booking.js"></script>
+				<!-- End Booking Script -->
+				<script src="js/jquery-3.3.1.min.js"></script>
+				<script src="js/popper.min.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+				<script src="js/picker.js"></script>
+				<script src="js/picker.date.js"></script>
+				<script src="js/main.js"></script>
+				<!--Review modal validation -->
+				<script src="assets/validate.js"></script>
+				<!-- Map -->
+				<script
+					src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAUQKuq-IHkzCt4VoGq2z4XYJ_ip7ZRkws"></script>
+				<script src="js/map.js"></script>
+				<script src="js/infobox.js"></script>
+				<!-- Popup   -->
+			
+</body>
+
+</html>

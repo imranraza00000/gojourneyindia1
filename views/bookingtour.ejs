@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Mirrored from www.ansonika.com/citytours/single_tour.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Jun 2022 05:31:09 GMT -->
+   <head>
+      <%- include("./partials/link_file/csslink/allcss.ejs"); %>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="fonts/icomoon/style.css">
+      <link rel="stylesheet" href="css/classic.css">
+      <link rel="stylesheet" href="css/classic.date.css">
+      <link rel="stylesheet" href="css/style.css">
+      <style type="text/css">
+         body {
+         margin: 0;
+         padding: 0;
+         }
+         body,
+         html {
+         height: 100%;
+         }
+         .md-mobile-picker-header {
+         font-size: 14px;
+         }
+         input.md-mobile-picker-input {
+         color: initial;
+         width: 100%;
+         padding: 10px;
+         margin: 6px 0 12px 0;
+         border: 1px solid #ccc;
+         border-radius: 0;
+         font-family: arial, verdana, sans-serif;
+         font-size: 14px;
+         box-sizing: border-box;
+         -webkit-appearance: none;
+         }
+         .md-mobile-picker-button.mbsc-button {
+         font-size: 13px;
+         padding: 0 15px;
+         line-height: 36px;
+         float: right;
+         margin: 6px 0;
+         width: 100%;
+         }
+         .mbsc-col-no-padding {
+         padding-left: 0;
+         }
+         .md-mobile-picker-box-label.mbsc-textfield-wrapper-box,
+         .md-mobile-picker-box-label .mbsc-textfield-wrapper-box,
+         .md-mobile-picker-inline {
+         margin: 6px 0 12px 0;
+         }
+         .form-popup {
+         display: none;
+         right: 15px;
+         border: 3px solid #f1f1f1;
+         z-index: 9;
+         }
+         /* Add styles to the form container */
+         .form-container {
+         padding: 10px;
+         background-color: white;
+         }
+         /* Full-width input fields */
+         .form-container input[type=text],
+         .form-container input[type=password] {
+         width: 100%;
+         padding: 15px;
+         margin: 5px 0 22px 0;
+         border: none;
+         background: #f1f1f1;
+         }
+         /* When the inputs get focus, do something */
+         .form-container input[type=text]:focus,
+         .form-container input[type=password]:focus {
+         background-color: #ddd;
+         outline: none;
+         }
+         /* Set a style for the submit/login button */
+         /* Add a red background color to the cancel button */
+         /* Add some hover effects to buttons */
+         .form-container .btn:hover,
+         .open-button:hover {
+         opacity: 1;
+         }
+         .counter {
+         width: 100px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         }
+         .counter input {
+         width: 50px;
+         border: 0;
+         line-height: 30px;
+         font-size: 20px;
+         text-align: center;
+         background: #0052cc;
+         color: #fff;
+         appearance: none;
+         outline: 0;
+         }
+         .counter span {
+         display: block;
+         font-size: 25px;
+         padding: 0 10px;
+         cursor: pointer;
+         color: #0052cc;
+         user-select: none;
+         }
+         .counterClass {
+         pointer-events: none;
+         opacity: 0.5;
+         }
+      </style>
+   </head>
+   <body class="datepicker_mobile_full">
+      <!-- Remove this class to disable datepicker full on mobile -->
+      <div id="preloader">
+         <div class="sk-spinner sk-spinner-wave">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
+         </div>
+      </div>
+      <!-- End Preload -->
+      <div class="layer"></div>
+      <!-- Mobile menu overlay mask -->
+      <!-- Header================================================== -->
+      <%- include("./partials/layout/header/header.ejs"); %>
+      <!-- End Header -->
+      <section class="parallax-window-tour" data-parallax="scroll" data-image-src="img/slide_hero.jpg"
+         data-natural-width="1400" data-natural-height="470">
+         <div class="parallax-content-2">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8">
+                     <h1>Manlai Tours</h1>
+                     <span class="rating"><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                        class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                        class="icon-smile"></i><small>(75)</small></span>
+                  </div>
+                  <div class="col-md-4">
+                     <div id="price_single_main">
+                        <p>
+                           <span><sup>Rs.</sup>9999/-</span> per person
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- End section -->
+      <main>
+         <div id="position">
+            <div class="container">
+               <ul>
+                  <li><a href="#">Home</a>
+                  </li>
+                  <li><a href="#">Category</a>
+                  </li>
+                  <li>Page active</li>
+               </ul>
+            </div>
+         </div>
+         <!-- End Position -->
+         <div class="collapse" id="collapseMap">
+            <div id="map" class="map"></div>
+         </div>
+         <!-- End Map -->
+         <div class="container margin_60">
+         <div class="row">
+            <div class="col-lg-7" id="single_tour_desc">
+               <!-- Map button for tablets/mobiles -->
+               <div class="row">
+                  <div class="col-lg-12">
+                     <h3 class="fw-bold">What's include & exclusive</h3>
+                     <p> Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens
+                        ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. 
+                     </p>
+                     <div class="row">
+                        <div class="col-md-6">
+                           <h4>include Services</h4>
+                           <ul id="" class="list_ok">
+                              <li>Lorem ipsum dolor sit amet</li>
+                              <li>No scripta electram necessitatibus sit</li>
+                              <li>Quidam percipitur instructior an eum</li>
+                              <li>Ut est saepe munere ceteros</li>
+                              <li>No scripta electram necessitatibus sit</li>
+                              <li>Quidam percipitur instructior an eum</li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6">
+                           <h4>exclusive Services</h4>
+                           <div id="exclusiv_service"></div>
+                        </div>
+                     </div>
+                     <!-- End row  -->
+                  </div>
+               </div>
+               <hr>
+               <h3 colspan="4"> Add options / Services/ Activities </h3>
+            </div>
+            <!--End  single_tour_desc-->
+            <aside class="col-lg-5">
+               <div class="box_style_1">
+                  <h3 class="inner bg-color-dark-red">- Tour Manali -</h3>
+                  <table class="table table_summary">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <div class="thumb_cart">
+                                 <img src="img/thumb_cart_1.jpg" alt="Image">
+                              </div>
+                           </td>
+                           <td>
+                              <span class="item_cart">Golden Tringle</span>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td> Adults </td>
+                           <td id="adult" class=""> 0 </td>
+                           <td class="" id="total"> 0 </td>
+                        </tr>
+                        <tr>
+                           <td> Children </td>
+                           <td id="child" class=""> 0 </td>
+                           <td class=""> 0 </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="box_style_1 expose">
+                  <h3 class="inner bg-color-dark-red">- Booking Tour -</h3>
+                  <div class="row">
+                     <form method="post" action="booking">
+                     <div class="col-sm-12">
+                        <div class="form-group">
+                           <div class="form-group">
+                              <div mbsc-page class="demo-mobile-desktop-usage">
+                                 <div class="h-100">
+                                    <div class="mbsc-grid">
+                                       <div class="mbsc-form-group">
+                                          <div class="mbsc-row">
+                                             <div class="mbsc-col-12">
+                                                <div class="col-md-6">
+                                                   <div class="form-group">
+                                                      <label for="input_from">From</label>
+                                                      <input type="text" name="booking_start_date"
+                                                         class="form-control" id="input_from"
+                                                         placeholder="Start Date">
+                                                   </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                   <div class="form-group">
+                                                      <label for="input_to">To</label>
+                                                      <input type="text" name="booking_and_date"
+                                                         class="form-control" id="input_to"
+                                                         placeholder="End Date">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <br>
+                     <table class="table table_summary">
+                        <tbody>
+                           <tr>
+                              <td colspan="5">
+                                 <div>
+                                    <p class="destination-type-btn relative">
+                                       <strong>Categories</strong>
+                                    </p>
+                                    <div class="col ">
+                                       <div class="radio-inline">
+                                          <input class="form-check-input" class="honeymoon" type="radio"
+                                             name="categoryType" id="honeymoon" value="Honeymoon">
+                                          <label class="form-check-label" for="flexRadioDefault1">
+                                          Honeymoon </label>
+                                       </div>
+                                       <div class="radio-inline">
+                                          <input class="form-check-input for" class="friend" type="radio"
+                                             name="categoryType" id="friend" value="Friend">
+                                          <label class="form-check-label" for="flexRadioDefault2">
+                                          Friend </label>
+                                       </div>
+                                       <div class="radio-inline">
+                                          <input class="form-check-input" class="family" type="radio"
+                                             name="categoryType" id="family" value="Family">
+                                          <label class="form-check-label" for="flexRadioDefault2">
+                                          Family </label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                                 <div class="container">
+                                    <div class="row ">
+                                       <div class="col-sm-12 py-3"><label for="">Mobile</label>
+                                          <input type="number" name="mobile" class="form-control"
+                                             placeholder="Plz enter mobile number">
+                                       </div>
+                                       <div class="col-sm-12">
+                                          <label for="">email</label>
+                                          <input type="email" name="email" class="form-control"
+                                             placeholder="Plz enter Email">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="2">
+                                 <button type="btn" class="btn btn-danger" onclick="addAdult()">Add
+                                 Person</button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td colspan="5">
+                                 <!-- add Adults function -->
+                                 <div class="form-popup form-inline" id="myForm">
+                                    <div class="col ">
+                                       <div class="form-check">
+                                          <button type="button" class="btn btn-danger"
+                                             onclick="closeForm()">Close</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </td>
+                           </tr>
+                     </table>
+                     <table class="table table_summary" id="table">
+                     </table>
+                     <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong id="errMessage">
+                        </strong>
+                     </div>
+                     <a class="btn_full" type="submit" id="button" onclick="date()">Book</a>
+                     </form>
+                  </div>
+                  <!--/box_style_1 -->
+                  <div class="box_style_4 mt-4">
+                     <i class="icon_set_1_icon-90"></i>
+                     <h4><span>Book</span> by phone</h4>
+                     <a href="tel://004542344599" class="phone">+91 9808858882</a>
+                     <small>Monday to Saturday 9.00am - 7.30pm</small>
+                  </div>
+            </aside>
+         
+            <!--End row -->
+         </div>
+         <!--End container -->
+         <div id="overlay"></div>
+         <!-- Mask on input focus -->
+      </main>
+      <!-- End main -->
+      <%- include("./partials/layout/footer/footer.ejs"); %>
+      <!-- End footer -->
+      <div id="toTop"></div>
+      <!-- Back to top button -->
+   
+
+      <%- include("./partials/layout/form/login.ejs"); %>
+ 
+      <script src="js/jquery-3.6.0.min.js"></script>
+      <script src="js/common_scripts_min.js"></script>
+      <script src="js/functions.js"></script>
+      <!-- sweet alert script -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+      <!-- Booking Script -->
+      <script>
+         // const { required } = require("joi");
+         
+         const booking_str_date = document.getElementById("input_from")
+         const booking_end_date = document.getElementById('input_to')
+         let categoryType = document.getElementsByName('categoryType')
+         let honeymoon = document.getElementById("honeymoon");
+         let friend = document.getElementById("friend");
+         let family = document.getElementById("family");
+         
+         // Journey data categorey scripthere
+         
+         bookingArra = [];
+         
+         function setDataLocalStorage() {
+             localStorage.setItem("bookingArra", JSON.stringify(bookingArra));
+         };
+         
+         function getDataLocalStorage() {
+             let getData = localStorage.getItem('bookingArra');
+             if (getData) {
+                 let bookingArra = JSON.parse(getData)
+                 for (var i = 0; i < bookingArra.length; i++) {
+         
+                     booking_str_date.value = bookingArra[i].booking_str_date;
+                     booking_end_date.value = bookingArra[i].booking_end_date;
+                     if (honeymoon.value === bookingArra[i].varivalCategory) {
+                         honeymoon.checked = true;
+                     } else if (friend.value === bookingArra[i].varivalCategory) {
+                         friend.checked = true;
+         
+                     } else if (family.value === bookingArra[i].varivalCategory) {
+                         family.checked = true;
+         
+                     }
+                 }
+             } else {
+                 setDataLocalStorage();
+             }
+         }
+         getDataLocalStorage();
+         
+         // name email feild 
+         
+         
+         
+         
+         // end data and category script
+         // Add person sctipt here
+         
+         var ageAdultChild = {
+             'adult': 0,
+             'child': 0
+         };
+         ageAdultChild.adult = JSON.parse(window.localStorage.getItem('adultCount'));
+         ageAdultChild.child = JSON.parse(window.localStorage.getItem('childCount'));
+         document.getElementById('adult').innerHTML = ageAdultChild.adult;
+         document.getElementById('child').innerHTML = ageAdultChild.child;
+         
+         
+         var form = `<div>
+         	<div class="form-group">
+         		<label for="name">Name</label>
+         		<input type="text" class="form-control" id="name" aria-describedby="ageHelp" placeholder="Enter Your Name">
+         	</div>
+         	<div class="row">
+         		<div class="col-md-6"> <label for="age">age</label>
+         			<input type="number" class="form-control" id="age" placeholder="Enter Your age">
+         		</div>
+         		<div class="col-md-6">
+         			<div class="form-check"><input class="form-check-input" class="gender" type="radio" name="gender" id="male"
+         					value="male">
+         				<label class="form-check-label" for="flexRadioDefault1"> Male </label>
+         			</div>
+         			<div class="form-check"><input class="form-check-input" class="gender" type="radio" name="gender"
+         					id="female" value="female">
+         				<label class="form-check-label" for="flexRadioDefault2"> Female </label>
+         			</div>
+         			<div class="form-check"> <input class="form-check-input" class="gender" type="radio" name="gender"
+         					id="other" value="other">
+         				<label class="form-check-label" for="flexRadioDefault2"> Others </label>
+         			</div>
+         		</div>
+         	</div>
+         </div>
+         <div class="row ">
+         	<div class="col">
+         		<div class="form-outline">
+         			<button type="button" id="button" class="btn btn-success" onclick="save()">Add</button>
+         		</div>
+         	</div>
+         	<div class="col ">
+         		<div class="form-check">
+         			<button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
+         		</div>
+         	</div>
+         </div>
+         </div>`;
+         
+         function table() {
+             let table = `<table class="table">
+         		<thead>
+         			<tr>
+         			<th clsaa="col-1">S/n</th>
+         			<th clsaa="col-5">Name</th>
+         			<th clsaa="col-2">Age</th>
+         			<th clsaa="col-2">Gender</th>
+         			<th clsaa="col-2">Action</th>
+         			
+         			</tr>
+                                  
+         		</thead>
+         	<tbody>`;
+             for (let i = 0; i < details.length; i++) {
+                 table = table + `<tr>
+         				<td>${i + 1}</td>
+         				<td>${details[i].name}</td>
+         				<td>${details[i].age}</td>
+         				<td>${details[i].localVrible}</td>
+         				
+         				<td><a onclick="edit(${i})"><i class=" icon_set_1_icon-68"></i><a>
+         				<a class="" onclick="deleteData(${i})"><i class="icon_set_1_icon-67"></i></a></td>
+         			</tr> `;
+             };
+             table = table + `</tbody>
+         	</table>`;
+         
+             document.getElementById("table").innerHTML = table;
+         };
+         document.getElementById("form").innerHTML = form;
+         details = [];
+         getData();
+         table();
+         
+         function getData() {
+             let Data = localStorage.getItem("details");
+             if (Data) {
+                 details = JSON.parse(Data);
+             } else {
+                 setData();
+             };
+         };
+         
+         function setData() {
+             localStorage.setItem("details", JSON.stringify(details));
+         };
+         
+         function save() {
+             let name = document.getElementById("name");
+             let age = document.getElementById("age");
+             let gender = document.getElementsByName("gender");
+         
+         
+             var localVrible = "";
+         
+             for (i = 0; i < gender.length; i++) {
+                 if (gender[i].checked) {
+                     localVrible = gender[i].value;
+                 }
+             }
+         
+         
+             if (name.value == 0) {
+                 alert("name is Empty");
+                 return
+             }
+         
+         
+             if (age.value == 0) {
+                 alert("Age is Empty");
+                 return
+             }
+         
+             if (age.value > 10) {
+                 localStorage.setItem("adultCount", JSON.stringify(ageAdultChild['adult'] = ageAdultChild['adult'] + 1));
+                 document.getElementById('adult').innerHTML = ageAdultChild['adult'];
+             }
+             if (age.value <= 10) {
+                 localStorage.setItem("childCount", JSON.stringify(ageAdultChild['child'] = ageAdultChild['child'] + 1));
+                 document.getElementById('child').innerHTML = ageAdultChild['child'];
+         
+         
+             }
+         
+             if (localVrible == 0) {
+                 alert("Gender is Empty");
+                 return
+             }
+         
+             let data = {
+                 name: name.value,
+                 age: age.value,
+                 localVrible: localVrible,
+         
+             };
+         
+             // console.log(data);
+             details.push(data);
+             setData();
+         
+             table();
+             name.value = "";
+             age.value = "";
+             localVrible.value = "";
+             addulClose();
+             priceCalculation()
+         
+         
+         };
+         
+         function decrement(index) {
+         
+             let dataget = localStorage.getItem("details");
+             let age = JSON.parse(dataget)
+         
+         
+             if (age[index]['age'] > 10) {
+                 localStorage.setItem("adultCount", JSON.stringify(ageAdultChild['adult'] = ageAdultChild['adult'] - 1));
+                 document.getElementById('adult').innerHTML = ageAdultChild['adult'];
+             }
+             if (age[index]['age'] < 10) {
+                 localStorage.setItem("childCount", JSON.stringify(ageAdultChild['child'] = ageAdultChild['child'] - 1));
+                 document.getElementById('child').innerHTML = ageAdultChild['child'];
+         
+         
+             }
+         
+         
+         }
+         
+         function addulClose() {
+             document.getElementById("myForm").style.display = "none";
+         }
+         
+         function deleteData(index) {
+             details.splice(index, 1);
+             decrement(index)
+             setData();
+             table();
+             priceCalculationDelete()
+         
+         };
+         
+         function edit(index) {
+             let editForm = `<div>
+         			<div class="form-group">
+         				<label for="name">Update Name</label>
+         				<input type="text" value="${details[index].name}" class="form-control" id="newName" aria-describedby="ageHelp"
+         					placeholder="Update Your Name">
+         			</div>
+         			<div class="row">
+         				<div class="col-md-6">
+         					<div class="form-group mt-3">
+         						<label for="age">age</label>
+         						<input type="age" value="${details[index].age}" class="form-control" id="newage"
+         							placeholder="Update Your age">
+         					</div>
+         				</div>
+         				<div class="col-md-6">
+         					<div class="form-check">
+         						<input class="form-check-input" class="gender" type="radio" name="updateGender" id="updatMale"
+         							value="Male">
+         						<label class="form-check-label" for="flexRadioDefault1"> Male </label>
+         					</div>
+         					<div class="form-check">
+         						<input class="form-check-input" class="gender" type="radio" name="updateGender" id="updateFemale"
+         							value="Female">
+         						<label class="form-check-label" for="flexRadioDefault2"> Female </label>
+         					</div>
+         					<div class="form-check">
+         						<input class="form-check-input" class="gender" type="radio" name="updateGender" id="updateOther"
+         							value="Others">
+         						<label class="form-check-label" for="flexRadioDefault2"> Others </label>
+         					</div>
+         				</div>
+         			</div>
+         			<button type="button" class="btn btn-danger mt-3" onclick="update(${index})">Update</button>
+         		</div>`;
+             addAdult()
+             document.getElementById("form").innerHTML = editForm;
+         
+         };
+         
+         function update(index) {
+             let newName = document.getElementById('newName');
+             let newage = document.getElementById('newage');
+             let updateGender = document.getElementsByName('updateGender');
+         
+             updatelocalVrible = "";
+         
+             for (i = 0; i < updateGender.length; i++) {
+                 if (updateGender[i].checked) {
+                     updatelocalVrible = updateGender[i].value;
+                 }
+             }
+             if (newName.value == "") {
+                 alert('empty name')
+                 return false;
+             }
+         
+             if (newage.value == "") {
+                 alert('empty age')
+                 return false;
+             }
+         
+             if (updatelocalVrible == "") {
+                 alert("Gender is Empty");
+                 return
+             }
+         
+             details[index] = {
+                 name: newName.value,
+                 age: newage.value,
+         
+                 localVrible: updatelocalVrible
+             };
+             setData();
+             table();
+             document.getElementById("form").innerHTML = form;
+         
+             addulClose()
+         }
+         
+         function addAdult() {
+             document.getElementById("myForm").style.display = "block";
+         
+         
+         }
+         
+         function closeForm() {
+             document.getElementById("myForm").style.display = "none";
+         
+         
+         }
+         
+         // submit button form data 
+         function date() {
+             var varivalCategory = "";
+         
+         
+             for (i = 0; i < categoryType.length; i++) {
+                 if (categoryType[i].checked) {
+                     varivalCategory = categoryType[i].value;
+                 }
+             }
+         
+             if (!booking_str_date.value || !booking_end_date.value) {
+                 document.getElementById('errMessage').innerHTML = 'Please select date';
+                 return;
+             }
+             if (!varivalCategory) {
+                 document.getElementById('errMessage').innerHTML = 'Please select Catogrey';
+                 return;
+             }
+             if (details.length === 0) {
+                 document.getElementById('errMessage').innerHTML = 'Please add member';
+                 return
+             }
+         
+         
+         
+             let date = {
+                 booking_str_date: booking_str_date.value,
+                 booking_end_date: booking_end_date.value,
+                 varivalCategory: varivalCategory,
+             }
+             if (bookingArra.length < 0) {
+                 bookingArra.push(date);
+             } else {
+                 bookingArra.splice(0)
+                 bookingArra.push(date);
+             }
+         
+             swal("Good job!", "You clicked the button!", "success");
+             setDataLocalStorage();
+             getDataLocalStorage()
+             nameEmail()
+         };
+         
+         
+         
+      </script>
+      <!-- End Booking Script -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/picker.js"></script>
+      <script src="js/picker.date.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/switcher.js"></script>
+      <div id="style-switcher">
+         <h2>Color Switcher <a href="#"><i class="icon_set_1_icon-65"></i></a></h2>
+         <div>
+            <ul class="colors" id="color1">
+               <li><a href="#" class="default" title="Defaul"></a></li>
+               <li><a href="#" class="aqua" title="Aqua"></a></li>
+               <li><a href="#" class="green_switcher" title="Green"></a></li>
+               <li><a href="#" class="orange" title="Orange"></a></li>
+               <li><a href="#" class="blue" title="Blue"></a></li>
+            </ul>
+         </div>
+      </div>
+   </body>
+</html>

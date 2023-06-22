@@ -1,0 +1,47 @@
+
+
+
+    <%- include('./admindashboardsidebar.ejs')%>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-8 mx-auto">
+                <div class="card border-0 shadow rounded-3 ">
+                    <div class="card-body p-4 p-sm-5">
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">Admin</h5>
+                        <% if(typeof err !='undefined' ){%>
+                            <div class="alert alert-dismissible alert-danger">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong>
+                                    <%= err %>
+                                </strong>
+                            </div>
+                            <% } %>
+                        <form method="post" action="">
+                            <div class="form-floating mb-3">
+                                <input type="name" name="name" class="form-control" id="floatingInput" placeholder="Enter your name">
+                                <label for="floatingInput">Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" id="floatingInput"
+                                    placeholder="Enter your email">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" name="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+
+                          
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Register</button>
+                            </div>
+                            <hr class="my-4">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('./admindashboardnavbar.ejs')%>

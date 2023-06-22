@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In | Go journey india</title>
+<meta name="keyword" content="">
+<meta name="description" content="Login with our portal">
+
+    <%- include("./partials/link_file/csslink/allcss.ejs"); %>
+</head>
+
+<body>
+    <div class="layer"></div>
+    <%- include("./whatsapp.ejs"); %>
+     <div class="header-color">
+    <%- include("./partials/layout/header/header.ejs"); %>
+    </div>
+
+    <!-- Sign In Popup -->
+    <section class="margin-top-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-xs-12 offset-md-1 col-sm-10 offset-lg-2">
+                    <div class="row">
+                         <%- include("./socialmediaicon.ejs"); %>
+                        <div class="col-md-7 p-4 border bg-white">
+                            <div id="sign_in">
+                                <h4 class="">Login</h4>
+                                <% if(typeof loginerr !='undefined' ){%>
+                                <div class="alert alert-dismissible alert-danger">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                    <strong> <%= loginerr %> </strong>
+                                </div>
+                                <% } %>
+                                <form method="post" action="login">
+                                    <div class="sign-in-wrapper">
+                                        <!-- <a href="google" class="social_bt google">Login with
+                                                                Google</a>
+                                                            <a href="google" class="social_bt facebook">Login with
+                                                                Facebook</a> -->
+                                        <hr />
+                                        <div class="row">
+                                            <div class="form-group col-lg-12">
+                                                <label class="text-dark">Email</label>
+                                                <input type="email" class="form-control" name="email" id="email"
+                                                    placeholder="Enter your email" />
+                                                <i class=""></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label class="text-dark">Password</label>
+                                            <input type="text" class="form-control" name="password" id="password"
+                                                placeholder="Enter your password" />
+                                            <i class=""></i>
+                                        </div>
+                                    </div>
+                                    <div class="row px-3 mb-4">
+                                        <div class="col-6 custom-control custom-checkbox custom-control-inline">
+                                            <input id="chk1" type="checkbox" name="chk" class="custom-control-input" />
+                                            <small for="chk1" class="custom-control-label  text-dark">Remember
+                                                me</small>
+                                        </div>
+                                        <div class="col-6 text-left">
+                                            <a href="forget-password" ><small>Forget Password?</small> </a>
+                                        </div>
+                                    </div>
+                                    <div class="w-50 py-3 offset-md-3 text-center">
+                                        <input type="submit" value="Login" class="btn bg-color-dark-red text-white" />
+                                    </div>
+                                    <div class="row mb-4 px-3">
+                                        <small class="font-weight-bold text-center text-dark">Don't have an account?
+                                            <a href="sign-up" onclick="register()">
+                                                Register</a></small>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include("./partials/layout/footer/footer.ejs"); %>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/common_scripts_min.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+
+</html>

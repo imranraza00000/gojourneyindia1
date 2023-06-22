@@ -1,0 +1,42 @@
+<head><link href="/css/bootstrap.min.css" rel="stylesheet"></head>
+<%- include('./admindashboardsidebar.ejs')%>
+<div class="container">
+    <div class="row">
+
+    
+<section id="section-4" class="content-current">
+    <h4 class="py-3">Your profile</h4>
+						<div class="row bg-white py-5">
+                            
+							<aside class="col-md-6">
+								
+								<ul id="profile_summary " class="list-unstyled">
+									<li>Name:- <span><%= userdata.name %></span>
+									</li>
+									<li> Email:- <span><%= userdata.email %></span>
+									</li>
+									
+									<li>Phone number:- <span><%= userdata.mobile %></span>
+									</li>
+									
+								</ul>
+							</aside>
+							<div class="col-md-6">
+								 <% if(userdata.profile_pic="" ){%>
+                        <img src="/img/<%= userdata.profile_pic%>" width="200px" height="300px" alt="Image"
+                            class="img-fluid styled profile_pic">
+                        <%}else{%>
+                        <img src="/img/avatar.jpg" width="200px" height="300px" alt="Image"
+                            class="img-fluid styled profile_pic">
+                        <%}%>
+							</div>
+						</div>
+						<!-- End row -->
+
+						<div class="divider"></div>
+
+						
+					</section>
+                    </div>
+</div>
+                    <%- include('./admindashboardnavbar.ejs')%>

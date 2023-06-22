@@ -1,0 +1,279 @@
+<head>
+   <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+</head>
+<%- include('./admindashboardsidebar.ejs')%>
+<div class="container">
+   <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-10 mx-auto">
+         <div class="card border-0 shadow rounded-3">
+            <div class="card-body p-sm-5">
+               <h5 class="card-title text-center mb-5 fw-light fs-5">Add Tour</h5>
+               <% if(typeof err !='undefined' ){%>
+               <div class="alert alert-dismissible alert-danger">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                  <strong>
+                     <%= err %>
+                  </strong>
+               </div>
+               <% } if(typeof success !='undefined'){ %>
+               <div class="alert alert-dismissible alert-success">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                  <strong>
+                     <%= success %>
+                  </strong>
+               </div>
+               <% }%>
+               <form method="post" action="touradd" enctype="multipart/form-data">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <label for="floatingInput">Tour Name</label>
+                        <input type="text" name="tourname" class="form-control" id="floatingInput"
+                           placeholder="Enter tour name" />
+                     </div>
+                     <div class="col-md-4">
+                        <label for="floatingInput">Duration</label>
+                        <input type="text" name="duration" class="form-control" id="floatingInput"
+                           placeholder="Enter duration" />
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-floating mb-3">
+                           <label for="floatingPassword">Location</label>
+                           <input type="text" name="location" class="form-control" id="floatingPassword"
+                              placeholder="Enter location" />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="form-floating mb-3">
+                           <label for="floatingPassword">Tour Image</label>
+                           <input type="file" multiple name="tourimg" class="form-control-file" id="floatingPassword"
+                              placeholder="Choose tour image" />
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput">Tour Price</label>
+                           <input type="text" name="tourpice" class="form-control" id="floatingInput"
+                              placeholder="Enter Tour Price" />
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="mb-3">
+                           <label for="floatingInput" class="">Person</label><br>
+                           <select class="form-select ml-2  p-1" id="" name="persone">
+                              <option name="" value="" selected>Select Person</option>
+                              <option value="per Person">per Person</option>
+                              <option value="per couple">per couple</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-4 py-3">
+                        <div class=" mb-3">
+                           <label for="floatingPassword">Tour State</label>
+                           <!--- India states -->
+                           <select class="form-select  ml-2 p-1" id="country-state" name="state">
+                              <option name="" value="" selected>Select State</option>
+                              <option value="India">India</option>
+                              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                              <option value="Andhra Pradesh">Andhra Pradesh</option>
+                              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                              <option value="Assam">Assam</option>
+                              <option value="Bihar">Bihar</option>
+                              <option value="Chandigarh">Chandigarh</option>
+                              <option value="Chhattisgarh">Chhattisgarh</option>
+                              <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                              <option value="Daman and Diu">Daman and Diu</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Gujarat">Gujarat</option>
+                              <option value="Haryana">Haryana</option>
+                              <option value="Himachal Pradesh">Himachal Pradesh</option>
+                              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                              <option value="Jharkhand">Jharkhand</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Kerala">Kerala</option>
+                              <option value="Ladakh">Ladakh</option>
+                              <option value="Lakshadweep">Lakshadweep</option>
+                              <option value="Madhya Pradesh">Madhya Pradesh</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Manipur">Manipur</option>
+                              <option value="Meghalaya">Meghalaya</option>
+                              <option value="Mizoram">Mizoram</option>
+                              <option value="Nagaland">Nagaland</option>
+                              <option value="Odisha">Odisha</option>
+                              <option value="Puducherry">Puducherry</option>
+                              <option value="Punjab">Punjab</option>
+                              <option value="Rajasthan">Rajasthan</option>
+                              <option value="Sikkim">Sikkim</option>
+                              <option value="Tamil Nadu">Tamil Nadu</option>
+                              <option value="Telangana">Telangana</option>
+                              <option value="Tripura">Tripura</option>
+                              <option value="Uttar Pradesh">Uttar Pradesh</option>
+                              <option value="Uttarakhand">Uttarakhand</option>
+                              <option value="West Bengal">West Bengal</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="col-md-4 py-3">
+                        <div class="mb-3">
+                           <label for="floatingInput" class="">Tour Session</label><br>
+                           <select class="form-select ml-2  p-1" id="" name="session">
+                              <option name="" value="" selected>Select Session</option>
+                              <option value="summer">Summer</option>
+                              <option value="winter">Winter</option>
+                              <option value="both">Both</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="col-md-4 py-3">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput" class="">Top Tour</label><br>
+                           <select class="form-select ml-2 p-1" id="" name="toptour">
+                              <option name="" value="" selected>Select Tour</option>
+                              <option value="Top Rated Tour">Top Rated Tour</option>
+                              <option value="Best Holy day">Best Holyday</option>
+                              <option value="Honeymoon">Honeymoon</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6 py-3">
+                        <div class="mb-3">
+                           <label for="floatingInput" class="">Please Select Center India</label><br>
+                           <select class="form-select ml-2  p-1" id="" name="central">
+                              <option name="" value="" selected>Please Select Centeral India</option>
+                              <option value="eastindia">East India</option>
+                              <option value="westindia">West India</option>
+                              <option value="norhtindia">North India</option>
+                              <option value="southindia">South India</option>
+                              <option value="centerindia">Central India</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="col-md-6 py-3">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput" class="">Choose your catogery</label><br>
+                           <select class="form-select ml-2 p-1" id="" name="tourcatogery">
+                              <option name="" value="" selected>Choose your catogery</option>
+                              <option value="normal">Normal tour packages</option>
+                              <option value="standard">Standard tour packages</option>
+                              <option value="premium">Premium tour packages</option>
+                              <option value="budget">Budget tour packages</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput">Tour Description SEO</label>
+                           <textarea type="text" name="tourdescription" class="form-control" id="floatingInput"
+                              placeholder="Enter Tour Price"></textarea>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput">Tour Keywords SEO</label>
+                           <textarea type="text" name="keywords" class="form-control" id="floatingInput"
+                              placeholder="Enter Tour Price"></textarea>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput">Tour About Describe</label>
+                           <textarea type="text" name="tourabout" class="form-control" id="floatingInput"
+                              placeholder="Tour About"></textarea>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput">Inclusion and Exclusion</label>
+                           <textarea name="inclusion" class="form-control" class="" id="inclusion"
+                              placeholder="Enter your name">
+                           </textarea>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-7">
+                        <div class="form-floating mb-3">
+                           <label for="floatingInput">Day 1 Hadding</label>
+                           <input type="text" name="hadding[]" class="form-control" id="floatingInput"
+                              placeholder="Enter day 1 Hadding" />
+                        </div>
+                        
+                     <input type="hidden" name="day[]" value="1" class="form-control" id="floatingInput" />
+                  </div>
+                  <div class="col-md-5">
+                     <div class="form-floating mb-3">
+                  <label for="floatingInput">Location images</label>
+                        <input type="file" name="locationimg class="form-control" id="floatingInput" />
+                     </div>
+                  </div>
+                  <div class="row" id="items">
+                     <div class="col-md-12">
+                        <div class="form-floating mb-3">
+                           <textarea name="description[]" class="form-control" class="" id="editor_1"
+                              placeholder="Enter your name">
+                           </textarea>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="py-3">
+                     <button id="add" class="btn add-more button-yellow uppercase" type="button">+ Add another
+                        referral</button>
+                     <button type="button" class="delete btn button-white uppercase">- Remove referral</button>
+                  </div>
+            </div>
+            <div class="border border-light ">
+               <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Add Tour</button>
+               </div>
+            </div>
+            <hr class="my-4" />
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<%- include('./admindashboardnavbar.ejs')%>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="https://nightly.ckeditor.com/full/ckeditor.js"></script>
+<script>
+   CKEDITOR.replace('editor_1')
+   CKEDITOR.replace('inclusion')
+</script>
+<script>
+   var x = 1;
+   $(document).ready(function () {
+      $(".delete").hide();
+      //when the Add Field button is clicked
+      $("#add").click(function (e) {
+         x++;
+         console.log(x)
+         $(".delete").fadeIn("1500");
+         //Append a new row of code to the "#items" div
+         $("#items").append(
+            '<div class="next-referral py-3 col-md-12"><div class="row py-3"></label><div class="col-md-8"><label for="floatingInput">Day ' + x + ' Hadding</label><input type="text" placeholder="plz.. Enter Headding ' + x + '" name="hadding[]" class="form-control"></div><input type="hidden" name="day[]" value=' + x + ' class="form-control" ></div><textarea id="editor_' + x + '" name="description[]" type="text" placeholder="Enter name of" class="form-control  input-md"></textarea></div>'
+         );
+         CKEDITOR.replace('editor_' + x);
+      });
+      $("body").on("click", ".delete", function (e) {
+
+         $(".next-referral").last().remove();
+         x--;
+         console.log(x)
+      });
+   });
+
+</script>

@@ -1,0 +1,124 @@
+<%- include('./admindashboardsidebar.ejs')%>
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Tour List</h1>
+
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <!-- <th>S/n</th> -->
+                                
+                                <th>Tour name</th>
+                                <th>duration</th>
+                                <th>Location</th>
+                                <th>Tour price</th>
+
+                                <th>Persone</th>
+                                
+                                
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+
+                            <% for(let i=0; i< tableData.length; i++){ %>
+                                <tr>
+                                  
+
+                                    <td>
+                                        <%= tableData[i].tourname %>
+                                    </td>
+                                    <td>
+                                        <%= tableData[i].duration %>
+                                    </td>
+
+                                    <td>
+                                        <%= tableData[i].location %>
+                                    </td>
+
+                                    <td>
+                                        <%= tableData[i].tourpice %>
+                                    </td>
+
+
+                                    <td>
+                                        <%= tableData[i].persone %>
+                                    </td>
+                                
+                                    <td>
+                                        <button type="button" class="btn btn-info " onclick="view('<%= tableData[i]._id%>')">Views</button>
+                                         <a href="/edit/<%= tableData[i]._id%>" class="btn btn-primary">Edit</a>
+                                        <a href="/delete/<%= tableData[i]._id%>" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                <% }%>
+
+                        </tbody>
+                    </table>
+                    <a href="/addtour" type="submit" class="btn btn-primary">Add Tour</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Tour image view -->
+    <div class="container">
+  
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+   
+        </div>
+    <div class="modal-body">
+    </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    <%- include('./admindashboardnavbar.ejs')%>
+        <!-- /.container-fluid -->
+        <script>
+            function view(id) {
+                $.ajax({
+                    url: '/view',
+                    data: { 'id': id },
+                    method: 'post',
+                    async: true,
+                    success: function (data) {
+                        $('.modal-body').html(data);
+                        $('#myModal').modal('show');
+                    },
+                    error: function (e) {
+                        console.log(e);
+                    }
+                });
+            }
+        </script>

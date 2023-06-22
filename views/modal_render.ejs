@@ -1,0 +1,43 @@
+<div class="tour_container">
+    <img src="img/<%= tableData.tourimg%>" class="img-responsive" width="450px">
+    <div class="">
+        <p>Tour Name - <%= tableData.tourname %></p>
+        <p><b class="text-danger fw-bold">Duration :</b> <span class="text-black"><%= tableData.duration %>s</span><br>
+            <b><%= tableData.location %></b><br>
+            <b  class="color-dark-blue">INR : <%= tableData.tourpice %> <span>Person</span>
+                <%= tableData.persone %></span></b>
+
+    </div>
+    <%var day = JSON.parse(tableData.day) %>
+    <%var hadding = JSON.parse(tableData.hadding) %>
+    <%var description = JSON.parse(tableData.description) %>
+
+    <% for(var k=0; k< day.length; k++){%>
+
+    <div class="form_title">
+        <h3>Day <%= day[k]%></h3>
+    </div>
+    <div class="step">
+        <div id="main">
+            <div class="accordion" id="faq">
+                <div class="card">
+                    <div class="card-header" id="faqhead1">
+                        <a href="#" class="btn-header-link" data-toggle="collapse" data-target="#faq<%= k%>"
+                            aria-expanded="true">
+                            <b class="fw-bold fs-6"><%= hadding[k]%></b>
+                        </a>
+                    </div>
+                    <div id="faq<%= k%>" class="collapse">
+                        <div class="card">
+                            <%- description[k]%>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <%}%>
+</div>
+
+<!-- End box tour -->

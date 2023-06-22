@@ -1,0 +1,109 @@
+
+<title></title>
+<header class="mt-10">
+    <div id="top_line">
+        <div class="container">
+            <div class="row">
+                <div class="col-6"><i class="icon-phone"></i><strong>+91 9808858882</strong></div>
+                <div class="col-6">
+                    <ul id="top_links">
+                        <%if (!locals.session.userId) { %>
+                            <li><a href="/sign-up" id="">Register</a></li>
+                            <li><a href="/sign-in" id="">Login</a></li>
+                            <% }else{ %>
+                                <div class="main-menu">
+                                    <ul>
+                                        <li class="submenu">
+                                            <a href="/myprofile" class="show-submenu">
+                                                Myprofile <i class="icon-down-open-mini"></i>
+                                            </a>
+                                            <ul>
+                                                <!-- <a href="myprofile" class="show-submenu text-dark">Myprofile</a> -->
+                                                <a href="" class="show-submenu text-dark">Booking</a>
+                                                <a href="/profile_setting" class="show-submenu text-dark">Setting</a>
+                                                <a href="/logout" class="show-submenu text-dark">Logout</a>
+                                            </ul>
+                                        </li>
+                                        <!-- <li class="submenu">
+                                            <a href="myprofile" class="show-submenu">My profile</a>
+                                            <ul>
+                                                <a href="faq" class="show-submenu text-dark">Booking</a>
+                                                <a href="faq" class="show-submenu text-dark">Setting</a>
+                                                <a href="faq" class="show-submenu text-dark">Logout</a>
+                                            </ul>
+                                        </li> -->
+                                    </ul>
+                                </div><!-- End main-menu -->
+                                <!-- container -->
+                                <%}%>
+                    </ul>
+                </div>
+            </div><!-- End row -->
+        </div><!-- End container-->
+    </div><!-- End top line-->
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+               <div id="logo_home">
+                    	<h1><a href="/index" title="City tours travel template">Gojourneyindia</a></h1>
+                    </div>
+            </div>
+            <nav class="col-9">
+                <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu
+                        mobile</span></a>
+                <div class="main-menu">
+                    <div class="d-center py-3 d-none hiddendiv submenu">
+                    <li class="submenu hiddenimg d-none" style="background-size: 160px 34px;">
+                            <img src="img/logo1.png" class="mx-auto d-block" height="34px" width="160px" alt="">
+                        </li>
+                    </div>
+                    <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
+                    <hr class="d-none hiddenhr">
+                    <ul>
+                        
+                        <li class="submenu">
+                            <a href="/index" class="show-submenu">Home</a>
+                        </li>
+                        <li class="submenu">
+                            <a href="/about" class="show-submenu">About Us</a>
+                        </li>
+                        <li class="submenu">
+                            <a href="/faq" class="show-submenu">Faq</a>
+
+                        </li>
+                        <li class="submenu">
+                            <a href="/contact_us" class="show-submenu">Contact</a>
+                        </li>
+                        <li class="submenu">
+                            <a href="/gallery" class="show-submenu">Gallery</a>
+                        </li>
+                        <li class="submenu">
+                            <a href="/all_tours_list" class="show-submenu">All Tours List</a>
+                        </li>
+                        <%if (!locals.session.userId) { %>
+                        <li class="submenu hidden d-none">
+                            <a href="/signUp" class="show-submenu">Register</a>
+                        </li>
+                        <li class="submenu hidden d-none">
+                            <a href="/signIn" class="show-submenu">Login</a>
+                        </li>
+                        <% }else{ %>
+                             <li class="submenu hidden d-none">
+                                            <a href="myprofile">
+                                                Myprofile 
+                                            </a>
+                                           
+                                        </li>
+                                        <li class="submenu hidden d-none">
+                                            <a href="logout" class="show-submenu text-dark">Logout</a>
+                                        </li>
+                                        <% }%>
+                        <!-- <li class="submenu">
+                            <a href="all_tours_list" class="show-submenu">Tour list</a>
+                        </li> -->
+                    </ul>
+                </div><!-- End main-menu -->
+            </nav>
+        </div>
+    </div><!-- container -->
+</header><!-- End Header -->

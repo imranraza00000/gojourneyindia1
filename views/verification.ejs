@@ -1,0 +1,18 @@
+<form method="post" action="">
+    <div class="sign-in-wrapper"></div>
+    <div class="row">
+        <div class="form-group col-lg-12">
+            <% if(typeof message !=='undefined' ){%>
+                <h4>
+                    <%= message%>
+                </h4>
+                <% }%>
+                    <label class="text-dark ">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                    <i class=""></i>
+        </div>
+    </div>
+    </div>
+    <div class="w-50 offset-md-3 text-center"><input type="submit" value="send verificatin mail" class="btn_login">
+    </div>
+</form>
